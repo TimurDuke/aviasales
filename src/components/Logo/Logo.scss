@@ -1,0 +1,8 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    align-self: center;
+  }
+}

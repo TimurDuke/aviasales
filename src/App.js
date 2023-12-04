@@ -1,5 +1,6 @@
 import React from 'react';
+import TicketsContainer from './containers/TicketsContainer';
 
-const App = () => <div>h</div>;
+const App = () => <TicketsContainer />;
 
 export default App;

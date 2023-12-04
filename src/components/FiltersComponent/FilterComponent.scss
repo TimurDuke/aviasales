@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.filter {
+  grid-area: filter;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px 20px 15px;
+
+  &__title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $mainTextColor;
+    margin: 0;
+  }
+
+  &__content {
+    margin-top: 10px;
+  }
+}
