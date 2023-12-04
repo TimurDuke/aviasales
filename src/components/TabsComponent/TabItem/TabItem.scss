@@ -1,38 +1,38 @@
 @import '../../../styles/variables';
 
 .tab {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 0;
-  height: 100%;
-  color: $mainTextColor;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  background-color: #fff;
-  cursor: pointer;
-  border: 1px solid #dfe5ec;
-  transition: background-color 0.4s ease, color 0.4s ease;
-  margin: 0;
-  width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    height: 100%;
+    color: $mainTextColor;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid #dfe5ec;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    margin: 0;
+    width: 33%;
 
-  &--selected {
-    background-color: $blueColor;
-    color: #fff;
-    border-color: $blueColor;
-  }
+    &--selected {
+        background-color: $blueColor;
+        color: #fff;
+        border-color: $blueColor;
+    }
 
-  &:first-child {
-    border-right: none;
-    border-radius: 6px 0 0 6px;
-  }
+    &:first-child {
+        border-right: none;
+        border-radius: 6px 0 0 6px;
+    }
 
-  &:last-child {
-    border-left: none;
-    border-radius: 0 6px 6px 0;
-  }
+    &:last-child {
+        border-left: none;
+        border-radius: 0 6px 6px 0;
+    }
 }

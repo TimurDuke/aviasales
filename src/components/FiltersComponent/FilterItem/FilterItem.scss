@@ -1,54 +1,52 @@
 @import '../../../styles/variables';
 
 .filter_item {
-  display: flex;
-  align-items: flex-start;
-  padding: 10px 20px;
-  width: 100%;
-  cursor: pointer;
-  background-color: #fff;
-  transition: background-color 0.1s ease;
-  user-select: none;
-  margin: 0 -20px;
-
-  &:hover {
-    background-color: #f1fcff;
-
-  }
-
-  &__checkbox {
-    visibility: hidden;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 20px;
+    width: 100%;
     cursor: pointer;
-    margin: 0;
-  }
+    background-color: #fff;
+    transition: background-color 0.1s ease;
+    user-select: none;
+    margin: 0 -20px;
 
-  &__checkbox:checked ~ &__label::before {
-    border-color: $blueColor;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00LjI4NTcxIDhMMCA0LjE2MTIzTDEuMjA4NTcgMy4wNzg3TDQuMjg1NzEgNS44MjcyNkwxMC43OTE0IDBMMTIgMS4wOTAyMUw0LjI4NTcxIDhaIiBmaWxsPSIjMjE5NkYzIi8+Cjwvc3ZnPgo=');
-  }
-
-
-  &__label {
-    cursor: pointer;
-    position: relative;
-    left: -12px;
-    display: inline-flex;
-    align-items: center;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 20px;
-    color: $mainTextColor;
-
-    &::before {
-      content: '';
-      width: 18px;
-      height: 18px;
-      margin-right: 10px;
-      border: 1px solid #9abbce;
-      border-radius: 2px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 12px;
+    &:hover {
+        background-color: #f1fcff;
     }
-  }
+
+    &__checkbox {
+        visibility: hidden;
+        cursor: pointer;
+        margin: 0;
+    }
+
+    &__checkbox:checked ~ &__label::before {
+        border-color: $blueColor;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik00LjI4NTcxIDhMMCA0LjE2MTIzTDEuMjA4NTcgMy4wNzg3TDQuMjg1NzEgNS44MjcyNkwxMC43OTE0IDBMMTIgMS4wOTAyMUw0LjI4NTcxIDhaIiBmaWxsPSIjMjE5NkYzIi8+Cjwvc3ZnPgo=');
+    }
+
+    &__label {
+        cursor: pointer;
+        position: relative;
+        left: -12px;
+        display: inline-flex;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        color: $mainTextColor;
+
+        &::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            border: 1px solid #9abbce;
+            border-radius: 2px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 12px;
+        }
+    }
 }

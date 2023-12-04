@@ -1,27 +1,27 @@
 @import '../../../styles/variables';
 
 .ticket-item {
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  padding: 20px;
-  min-height: 184px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 20px;
-
-  &__header {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    min-height: 184px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 20px;
 
-    &__price {
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 24px;
-      color: $blueColor;
-      margin: 0;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__price {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 24px;
+            color: $blueColor;
+            margin: 0;
+        }
     }
-  }
 }
