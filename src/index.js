@@ -5,6 +5,10 @@ import App from './App';
 import './index.scss';
 import store from './store/configureStore';
 
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 const app = (
     <Provider store={store}>
         <App />

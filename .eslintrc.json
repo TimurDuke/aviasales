@@ -12,6 +12,7 @@
         "no-plusplus": "off",
         "no-extra-boolean-cast": "off",
         "no-case-declarations": "off",
+        "no-restricted-globals": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/jsx-props-no-spreading": "off",
         "react/state-in-constructor": [1, "always"],

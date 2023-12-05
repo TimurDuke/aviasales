@@ -29,3 +29,9 @@ export const fetchTickets = () => async dispatch => {
         }
     }
 };
+
+export const SET_RENDER_TICKETS = 'SET_RENDER_TICKETS';
+export const setRenderTickets = () => ({ type: SET_RENDER_TICKETS });
+
+export const GET_MORE_TICKETS = 'GET_MORE_TICKETS';
+export const getMoreTickets = () => ({ type: GET_MORE_TICKETS });

@@ -1,6 +1,12 @@
 .ticket-details {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 80%;
+
+    &__item-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: stretch;
+    }
 }
