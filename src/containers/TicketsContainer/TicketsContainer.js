@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Logo from '../../components/Logo';
 import FiltersComponent from '../../components/FiltersComponent';
 import TabsComponent from '../../components/TabsComponent';
 import TicketsComponent from '../../components/TicketsComponent';
+import { fetchTickets } from '../../store/actions/ticketsActions';
 import './TicketsContainer.scss';
 
 const TicketsContainer = () => {
-    console.log('asd');
+    const dispatch = useDispatch();
+    const { searchToken } = useSelector(state => state.token);
+
+    useEffect(() => {
+        if (searchToken) {
+            dispatch(fetchTickets());
+        }
+    }, [dispatch, searchToken]);
+
     return (
         <div className="tickets">
             <Logo />
