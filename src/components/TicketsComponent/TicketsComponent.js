@@ -6,11 +6,16 @@ import {
     increaseStacksCount,
 } from '../../store/actions/ticketsActions';
 import usePrevious from '../../hooks/usePrevious';
+import NoTickets from '../UI/NoTickets/NoTickets';
+import TicketsLoading from '../UI/TicketsLoading/TicketsLoading';
 
 const TicketsComponent = () => {
     const dispatch = useDispatch();
     const renderTickets = useSelector(state => state.tickets.renderTickets);
     const stacksCount = useSelector(state => state.tickets.stacksCount);
+    const isTokenLoading = useSelector(state => state.token.isLoading);
+    const isTicketsLoading = useSelector(state => state.tickets.isLoading);
+
     const prevRenderTickets = usePrevious(renderTickets);
 
     useEffect(() => {
@@ -39,6 +44,10 @@ const TicketsComponent = () => {
                 renderTickets.map((ticket, index) => (
                     <TicketItem key={index} ticket={ticket} />
                 ))}
+            {!renderTickets.length && !isTokenLoading && !isTicketsLoading && (
+                <NoTickets />
+            )}
+            {(isTokenLoading || isTicketsLoading) && <TicketsLoading />}
             {!!renderTickets.length && (
                 <button
                     type="button"

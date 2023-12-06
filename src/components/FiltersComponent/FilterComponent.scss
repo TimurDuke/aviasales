@@ -7,6 +7,12 @@
     border-radius: 5px;
     padding: 20px 20px 15px;
 
+    &--loading {
+        pointer-events: none;
+        opacity: 0.5;
+        z-index: 10;
+    }
+
     &__title {
         font-size: 12px;
         font-weight: 600;

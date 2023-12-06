@@ -1,0 +1,83 @@
+@import '../../../styles/variables';
+
+.content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 160px;
+    overflow: hidden;
+    width: 80%;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    line-height: 40px;
+    color: $blueColor;
+
+    &__container {
+        font-weight: 600;
+        letter-spacing: 1px;
+        overflow: hidden;
+        height: 40px;
+        padding: 0 40px;
+
+        &:before {
+            content: '\2708';
+            left: 0;
+        }
+
+        &:after {
+            content: '\2708';
+            transform: scaleX(-1);
+            position: absolute;
+            right: 0;
+        }
+
+        &:after, &:before {
+            position: absolute;
+            top: 0;
+            color: $blueColor;
+            font-size: 32px;
+            line-height: 40px;
+            animation-name: opacity;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+        }
+
+        &__list {
+            margin-top: 0;
+            padding: 0;
+            text-align: left;
+            list-style: none;
+            animation-name: change;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+
+            &__item {
+                text-align: center;
+                line-height: 40px;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@keyframes opacity {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes change {
+    0%, 12.66%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    16.66%, 45.98% {
+        transform: translate3d(0, -50%, 0);
+    }
+    49.98%, 95.96% {
+        transform: translate3d(0, 0, 0);
+    }
+}

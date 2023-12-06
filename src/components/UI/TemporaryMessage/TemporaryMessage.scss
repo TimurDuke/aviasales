@@ -1,0 +1,28 @@
+.message {
+    position: absolute;
+    top: 15%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+    color: #036dc3;
+}
+
+.fade-up {
+    opacity: 0;
+    animation: fade-up 1s forwards cubic-bezier(.2, 2, .4, 1);
+}
+
+@keyframes fade-up {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}

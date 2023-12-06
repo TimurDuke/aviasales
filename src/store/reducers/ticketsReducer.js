@@ -17,7 +17,6 @@ const initialState = {
     tickets: [],
     filteredTickets: [],
     renderTickets: [],
-
     stacksCount: 1,
     isLoading: false,
     isAllLoading: false,

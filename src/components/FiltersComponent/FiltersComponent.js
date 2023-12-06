@@ -11,6 +11,8 @@ import './FilterComponent.scss';
 const FiltersComponent = () => {
     const dispatch = useDispatch();
     const filters = useSelector(state => state.filters.filters);
+    const isTokenLoading = useSelector(state => state.token.isLoading);
+    const isTicketsLoading = useSelector(state => state.tickets.isLoading);
 
     const handleChange = filterKey => {
         if (filterKey === 'all') {
@@ -21,7 +23,11 @@ const FiltersComponent = () => {
     };
 
     return (
-        <div className="filter">
+        <div
+            className={`filter ${
+                isTicketsLoading || isTokenLoading ? 'filter--loading' : ''
+            }`}
+        >
             <p className="filter__title">Количество пересадок</p>
             <div className="filter__content">
                 {Object.entries(FILTER_NAMES).map(([filterKey, filterName]) => (
