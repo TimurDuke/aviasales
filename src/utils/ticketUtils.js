@@ -1,27 +1,27 @@
-export const formatedPrice = price =>
+export const formattedPrice = price =>
     `${price.toLocaleString('ru-RU')} Р`.replace(/,/g, ' ');
 
-export const formatedTransfers = (origin, destination) =>
+export const formattedTransfers = (origin, destination) =>
     `${origin} - ${destination}`;
 
-export const formatedTotalTime = duration => {
+export const formattedTotalTime = duration => {
     const hours = Math.floor(duration / 60);
     const minutes = duration - hours * 60;
     return `${hours}ч ${minutes}м`;
 };
 
-export const formatedFlightTime = (date, duration) => {
+export const formattedFlightTime = (date, duration) => {
     const departure = new Date(date);
 
     const arrival = new Date(departure.getTime() + duration * 60000);
 
-    function formatedTime(dateTime) {
+    function formattedTime(dateTime) {
         const hours = dateTime.getUTCHours().toString().padStart(2, '0');
         const minutes = dateTime.getUTCMinutes().toString().padStart(2, '0');
         return `${hours}:${minutes}`;
     }
 
-    return `${formatedTime(departure)} – ${formatedTime(arrival)}`;
+    return `${formattedTime(departure)} – ${formattedTime(arrival)}`;
 };
 
 const getTransferFormIndex = count => {
@@ -37,7 +37,7 @@ const getTransferFormIndex = count => {
     return 0; // 'пересадок'
 };
 
-export const formatedStopsCount = transfers => {
+export const formattedStopsCount = transfers => {
     const transferForms = ['пересадок', 'пересадка', 'пересадки'];
     const count = transfers.length;
 

@@ -7,3 +7,5 @@ export const FILTER_NAMES = {
 };
 
 export const TAB_NAMES = ['Самый дешевый', 'Самый быстрый', 'Оптимальный'];
+
+export const TICKETS_COUNT_IN_REQUEST = 500;

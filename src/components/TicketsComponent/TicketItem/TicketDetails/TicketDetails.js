@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes, { object } from 'prop-types';
 import TicketDetailsItem from './TicketDetailsItem';
 import {
-    formatedFlightTime,
-    formatedStopsCount,
-    formatedTotalTime,
-    formatedTransfers,
+    formattedFlightTime,
+    formattedStopsCount,
+    formattedTotalTime,
+    formattedTransfers,
 } from '../../../../utils/ticketUtils';
 
 import './TicketDetails.scss';
@@ -13,29 +13,33 @@ import './TicketDetails.scss';
 const TicketDetails = ({ segments }) => {
     const [goingRoute, comingBackRoute] = segments;
 
-    const goingRouteFlightTime = formatedFlightTime(
+    const goingRouteFlightTime = formattedFlightTime(
         goingRoute.date,
         goingRoute.duration
     );
-    const comingBackRouteFlightTime = formatedFlightTime(
+    const comingBackRouteFlightTime = formattedFlightTime(
         comingBackRoute.date,
         comingBackRoute.duration
     );
 
-    const goingRoutePoints = formatedTransfers(
+    const goingRoutePoints = formattedTransfers(
         goingRoute.origin,
         goingRoute.destination
     );
-    const comingBackRoutePoints = formatedTransfers(
+    const comingBackRoutePoints = formattedTransfers(
         comingBackRoute.origin,
         comingBackRoute.destination
     );
 
-    const goingRouteDuration = formatedTotalTime(goingRoute.duration);
-    const comingBackRouteDuration = formatedTotalTime(comingBackRoute.duration);
+    const goingRouteDuration = formattedTotalTime(goingRoute.duration);
+    const comingBackRouteDuration = formattedTotalTime(
+        comingBackRoute.duration
+    );
 
-    const goingRoutStopsCount = formatedStopsCount(goingRoute.stops);
-    const comingBackRouteStopsCount = formatedStopsCount(comingBackRoute.stops);
+    const goingRoutStopsCount = formattedStopsCount(goingRoute.stops);
+    const comingBackRouteStopsCount = formattedStopsCount(
+        comingBackRoute.stops
+    );
 
     const goingRouteStops = goingRoute.stops.join(', ');
     const comingBackRouteStops = comingBackRoute.stops.join(', ');

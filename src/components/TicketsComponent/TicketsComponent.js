@@ -3,29 +3,35 @@ import { useDispatch, useSelector } from 'react-redux';
 import TicketItem from './TicketItem';
 import {
     getMoreTickets,
-    setRenderTickets,
+    increaseStacksCount,
 } from '../../store/actions/ticketsActions';
+import usePrevious from '../../hooks/usePrevious';
 
 const TicketsComponent = () => {
     const dispatch = useDispatch();
-    const { tickets, renderTickets, stacksCount } = useSelector(
-        state => state.tickets
-    );
+    const renderTickets = useSelector(state => state.tickets.renderTickets);
+    const stacksCount = useSelector(state => state.tickets.stacksCount);
+    const prevRenderTickets = usePrevious(renderTickets);
 
     useEffect(() => {
-        if (!!tickets.length) {
-            dispatch(setRenderTickets());
+        if (
+            stacksCount > 1 &&
+            !!renderTickets.length &&
+            !!prevRenderTickets?.length
+        ) {
+            if (renderTickets.length !== prevRenderTickets.length) {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth',
+                });
+            }
         }
-    }, [dispatch, tickets, stacksCount]);
+    }, [prevRenderTickets, renderTickets, stacksCount]);
 
-    useEffect(() => {
-        if (stacksCount > 1) {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth',
-            });
-        }
-    }, [renderTickets, stacksCount]);
+    const getMoreTicketsHandler = () => {
+        dispatch(increaseStacksCount());
+        dispatch(getMoreTickets());
+    };
 
     return (
         <>
@@ -37,7 +43,7 @@ const TicketsComponent = () => {
                 <button
                     type="button"
                     className="tickets__inner__content__more-button"
-                    onClick={() => dispatch(getMoreTickets())}
+                    onClick={getMoreTicketsHandler}
                 >
                     Показать еще 5 билетов!
                 </button>

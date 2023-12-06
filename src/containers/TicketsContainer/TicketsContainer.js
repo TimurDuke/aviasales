@@ -9,7 +9,7 @@ import './TicketsContainer.scss';
 
 const TicketsContainer = () => {
     const dispatch = useDispatch();
-    const { searchToken } = useSelector(state => state.token);
+    const searchToken = useSelector(state => state.token.searchToken);
 
     useEffect(() => {
         if (searchToken) {
