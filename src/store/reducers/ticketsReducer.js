@@ -78,21 +78,24 @@ const ticketsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 filteredTickets: action.payload,
-                renderTickets: action.payload.slice(0, state.stacksCount * 5),
+                renderTickets: action.payload.slice(0, 5),
+                stacksCount: 1,
             };
 
         case SORT_TICKETS_BY_DURATION:
             return {
                 ...state,
                 filteredTickets: action.payload,
-                renderTickets: action.payload.slice(0, state.stacksCount * 5),
+                renderTickets: action.payload.slice(0, 5),
+                stacksCount: 1,
             };
 
         case SORT_TICKETS_BY_OPTIMAL:
             return {
                 ...state,
                 filteredTickets: action.payload,
-                renderTickets: action.payload.slice(0, state.stacksCount * 5),
+                renderTickets: action.payload.slice(0, 5),
+                stacksCount: 1,
             };
 
         default:
