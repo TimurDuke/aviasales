@@ -68,3 +68,22 @@ export const sortTicketsByFilter = filteredTickets => ({
     type: SORT_TICKETS_BY_FILTER,
     payload: filteredTickets,
 });
+
+export const SORT_TICKETS_BY_PRICE = 'SORT_TICKETS_BY_PRICE';
+export const SORT_TICKETS_BY_DURATION = 'SORT_TICKETS_BY_DURATION';
+export const SORT_TICKETS_BY_OPTIMAL = 'SORT_TICKETS_BY_OPTIMAL';
+
+export const sortTicketsByPrice = tickets => ({
+    type: SORT_TICKETS_BY_PRICE,
+    payload: tickets,
+});
+
+export const sortTicketsByDuration = tickets => ({
+    type: SORT_TICKETS_BY_DURATION,
+    payload: tickets,
+});
+
+export const sortTicketsByOptimal = tickets => ({
+    type: SORT_TICKETS_BY_OPTIMAL,
+    payload: tickets,
+});

@@ -8,6 +8,7 @@
     "parser": "babel-eslint",
     "plugins": ["react", "jsx-a11y", "import", "react-hooks"],
     "rules": {
+        "consistent-return": "off",
         "no-nested-ternary": "off",
         "no-plusplus": "off",
         "no-extra-boolean-cast": "off",

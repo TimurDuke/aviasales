@@ -45,3 +45,33 @@ export const formattedStopsCount = transfers => {
 
     return count === 0 ? 'Прямой рейс' : `${count} ${transferForms[formIndex]}`;
 };
+
+const getDuration = ticket =>
+    ticket.segments.reduce((acc, segment) => acc + segment.duration, 0);
+const getStopsCount = ticket =>
+    ticket.segments.reduce((acc, segment) => acc + segment.stops.length, 0);
+
+export const sortByPrice = tickets =>
+    [...tickets].sort((a, b) => a.price - b.price);
+
+export const sortByDuration = tickets =>
+    [...tickets].sort((a, b) => {
+        const prevTicketDuration = getDuration(a);
+        const nextTicketDuration = getDuration(b);
+
+        return prevTicketDuration - nextTicketDuration;
+    });
+
+export const sortByStopsCountAndPrice = tickets =>
+    [...tickets].sort((a, b) => {
+        const prevTicketStopsCount = getStopsCount(a);
+        const nextTicketStopsCount = getStopsCount(b);
+
+        const prevTicketPrice = a.price;
+        const nextTicketPrice = b.price;
+
+        return (
+            prevTicketStopsCount - nextTicketStopsCount ||
+            prevTicketPrice - nextTicketPrice
+        );
+    });

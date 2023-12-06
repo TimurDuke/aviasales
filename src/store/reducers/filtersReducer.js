@@ -1,4 +1,9 @@
-import { TOGGLE_ALL_FILTERS, TOGGLE_FILTER } from '../actions/filtersActions';
+import {
+    RESET_FILTER_BY_BUTTON,
+    TOGGLE_ALL_FILTERS,
+    TOGGLE_FILTER,
+    TOGGLE_FILTER_BY_BUTTON,
+} from '../actions/filtersActions';
 
 const initialState = {
     filters: {
@@ -7,6 +12,11 @@ const initialState = {
         oneStop: false,
         twoStops: false,
         threeStops: false,
+    },
+    filtersByButton: {
+        cheapest: false,
+        fastest: false,
+        optimal: false,
     },
 };
 const filtersReducer = (state = initialState, action) => {
@@ -24,6 +34,7 @@ const filtersReducer = (state = initialState, action) => {
                     threeStops: areAllEnabled,
                 },
             };
+
         case TOGGLE_FILTER:
             const filterName = action.payload;
 
@@ -43,6 +54,21 @@ const filtersReducer = (state = initialState, action) => {
                     all: areAllFiltersActive,
                 },
             };
+
+        case TOGGLE_FILTER_BY_BUTTON:
+            const filterByButtonName = action.payload;
+
+            const newFiltersByButton = {
+                ...initialState.filtersByButton,
+                [filterByButtonName]:
+                    !state.filtersByButton[filterByButtonName],
+            };
+
+            return { ...state, filtersByButton: newFiltersByButton };
+
+        case RESET_FILTER_BY_BUTTON:
+            return { ...state, filtersByButton: initialState.filtersByButton };
+
         default:
             return state;
     }

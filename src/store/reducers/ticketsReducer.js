@@ -7,13 +7,17 @@ import {
     FETCH_TICKETS_SUCCESS,
     GET_MORE_TICKETS,
     INCREASE_STACKS_COUNT,
+    SORT_TICKETS_BY_DURATION,
     SORT_TICKETS_BY_FILTER,
+    SORT_TICKETS_BY_OPTIMAL,
+    SORT_TICKETS_BY_PRICE,
 } from '../actions/ticketsActions';
 
 const initialState = {
     tickets: [],
     filteredTickets: [],
     renderTickets: [],
+
     stacksCount: 1,
     isLoading: false,
     isAllLoading: false,
@@ -54,21 +58,44 @@ const ticketsReducer = (state = initialState, action) => {
                 tickets = [...state.tickets];
             }
 
-            const renderTickets = tickets.slice(0, state.stacksCount * 5);
-            return { ...state, renderTickets };
+            return {
+                ...state,
+                renderTickets: tickets.slice(0, state.stacksCount * 5),
+            };
 
         case INCREASE_STACKS_COUNT:
             let currentCount = state.stacksCount;
             return { ...state, stacksCount: ++currentCount };
 
         case SORT_TICKETS_BY_FILTER:
-            const filteredRenderTickets = action.payload.slice(0, 5);
             return {
                 ...state,
                 filteredTickets: action.payload,
-                renderTickets: filteredRenderTickets,
+                renderTickets: action.payload.slice(0, 5),
                 stacksCount: 1,
             };
+
+        case SORT_TICKETS_BY_PRICE:
+            return {
+                ...state,
+                filteredTickets: action.payload,
+                renderTickets: action.payload.slice(0, state.stacksCount * 5),
+            };
+
+        case SORT_TICKETS_BY_DURATION:
+            return {
+                ...state,
+                filteredTickets: action.payload,
+                renderTickets: action.payload.slice(0, state.stacksCount * 5),
+            };
+
+        case SORT_TICKETS_BY_OPTIMAL:
+            return {
+                ...state,
+                filteredTickets: action.payload,
+                renderTickets: action.payload.slice(0, state.stacksCount * 5),
+            };
+
         default:
             return state;
     }

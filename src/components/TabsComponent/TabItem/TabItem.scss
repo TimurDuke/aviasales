@@ -24,6 +24,7 @@
         background-color: $blueColor;
         color: #fff;
         border-color: $blueColor;
+        pointer-events: none;
     }
 
     &:first-child {
@@ -34,5 +35,14 @@
     &:last-child {
         border-left: none;
         border-radius: 0 6px 6px 0;
+    }
+
+    &:hover {
+        background: #f8f8f8;
+    }
+    
+    &:disabled {
+        color: #868484;
+        pointer-events: none;
     }
 }

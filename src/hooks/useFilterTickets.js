@@ -1,6 +1,12 @@
 import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { sortTicketsByFilter } from '../store/actions/ticketsActions';
+import {
+    sortByDuration,
+    sortByPrice,
+    sortByStopsCountAndPrice,
+} from '../utils/ticketUtils';
+import { resetFilterByButton } from '../store/actions/filtersActions';
 
 // Хук useFilterTickets автоматически фильтрует билеты на основе текущего состояния фильтров.
 // Без надобности его вызова
@@ -9,9 +15,10 @@ const useFilterTickets = () => {
     const dispatch = useDispatch();
     const tickets = useSelector(state => state.tickets.tickets);
     const filters = useSelector(state => state.filters.filters);
+    const filtersByButton = useSelector(state => state.filters.filtersByButton);
 
     const filterTickets = useCallback(() => {
-        const filteredTickets = tickets.filter(ticket =>
+        let filteredTickets = tickets.filter(ticket =>
             ticket.segments.some(segment => {
                 const stopsCount = segment.stops.length;
                 if (filters.all) return true;
@@ -23,6 +30,27 @@ const useFilterTickets = () => {
                 return false;
             })
         );
+
+        const activeFilter = Object.entries(filtersByButton).find(
+            ([, value]) => value
+        );
+        if (activeFilter) {
+            switch (activeFilter[0]) {
+                case 'cheapest':
+                    filteredTickets = sortByPrice(filteredTickets);
+                    break;
+                case 'fastest':
+                    filteredTickets = sortByDuration(filteredTickets);
+                    break;
+                case 'optimal':
+                    filteredTickets = sortByStopsCountAndPrice(filteredTickets);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (!filteredTickets.length) dispatch(resetFilterByButton());
 
         dispatch(sortTicketsByFilter(filteredTickets));
         // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -6,6 +6,10 @@ export const FILTER_NAMES = {
     threeStops: '3 пересадки',
 };
 
-export const TAB_NAMES = ['Самый дешевый', 'Самый быстрый', 'Оптимальный'];
+export const TAB_NAMES = {
+    cheapest: 'Самый дешевый',
+    fastest: 'Самый быстрый',
+    optimal: 'Оптимальный',
+};
 
 export const TICKETS_COUNT_IN_REQUEST = 500;
