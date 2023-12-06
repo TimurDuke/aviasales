@@ -25,12 +25,14 @@
     height: 40px;
     margin-left: -20px;
     background-size: contain;
-    animation: bounceAnim 1s cubic-bezier(.63, .09, .75, .46) infinite alternate,
-    spinAnim 3s linear infinite;
+    animation: bounceAnim 1s cubic-bezier(0.63, 0.09, 0.75, 0.46) infinite
+            alternate,
+        spinAnim 3s linear infinite;
 }
 
 @keyframes bounceAnim {
-    0%, 10% {
+    0%,
+    10% {
         bottom: 50%;
     }
 

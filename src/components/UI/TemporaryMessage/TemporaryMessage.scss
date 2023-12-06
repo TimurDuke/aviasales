@@ -13,7 +13,7 @@
 
 .fade-up {
     opacity: 0;
-    animation: fade-up 1s forwards cubic-bezier(.2, 2, .4, 1);
+    animation: fade-up 1s forwards cubic-bezier(0.2, 2, 0.4, 1);
 }
 
 @keyframes fade-up {
