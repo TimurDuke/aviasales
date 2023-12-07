@@ -19,7 +19,7 @@ const initialState = {
     stacksCount: 1,
     isLoading: false,
     isAllLoading: false,
-    error: '',
+    error: null,
 };
 
 const ticketsReducer = (state = initialState, action) => {

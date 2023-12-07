@@ -48,7 +48,14 @@ export const fetchTickets = () => async (dispatch, getState) => {
         if (e.response && e.response.status === 500) {
             await fetchTickets()(dispatch, getState);
         } else if (e.response) {
-            dispatch(fetchTicketsFailure(e.response.data));
+            dispatch(
+                fetchTicketsFailure({
+                    status: e.response.status,
+                    message: e.message,
+                })
+            );
+        } else {
+            dispatch(fetchTicketsFailure({ message: 'Что-то пошло не так' }));
         }
     }
 };

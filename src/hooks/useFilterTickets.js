@@ -50,9 +50,10 @@ const useFilterTickets = () => {
             }
         }
 
-        if (!filteredTickets.length) dispatch(resetFilterByButton());
+        if (!filteredTickets.length && !!tickets.length)
+            dispatch(resetFilterByButton());
 
-        dispatch(sortTicketsByFilter(filteredTickets));
+        if (!!!!tickets.length) dispatch(sortTicketsByFilter(filteredTickets));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch, filters]);
 

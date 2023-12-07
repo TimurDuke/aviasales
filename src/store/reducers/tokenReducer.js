@@ -7,7 +7,7 @@ import {
 const initialState = {
     searchToken: '',
     isLoading: false,
-    error: '',
+    error: null,
 };
 
 const tokenReducer = (state = initialState, action) => {

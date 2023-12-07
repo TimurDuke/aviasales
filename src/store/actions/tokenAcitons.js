@@ -19,7 +19,16 @@ export const fetchToken = () => async dispatch => {
         }
     } catch (e) {
         if (e.response) {
-            dispatch(setTokenFailure(e.response.data));
+            dispatch(
+                setTokenFailure({
+                    status: e.response.status,
+                    message: e.message,
+                })
+            );
+        } else if (e.message) {
+            dispatch(setTokenFailure({ message: e.message }));
+        } else {
+            dispatch(setTokenFailure({ message: 'Что-то пошло не так' }));
         }
     }
 };

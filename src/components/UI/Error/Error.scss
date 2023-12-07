@@ -1,0 +1,43 @@
+@import '../../../styles/variables';
+
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    &__status {
+        font: 75px/75px Monoton;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+        color: red;
+        margin-bottom: 0;
+    }
+
+    &__message {
+        font-size: 22px;
+        font-weight: 700;
+        color: red;
+        letter-spacing: 1px;
+    }
+
+    &__button {
+        cursor: pointer;
+        font-weight: 300;
+        color: #fff;
+        font-size: 18px;
+        background: $blueColor;
+        border: none;
+        padding: 15px;
+        border-radius: 10px;
+        transition: all .3s linear;
+
+        &:hover {
+            background: #085cd5;
+        }
+
+        &:active {
+            background: #083e8d;
+        }
+    }
+}
