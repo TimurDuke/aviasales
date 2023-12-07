@@ -70,7 +70,8 @@ $duration: 1.5s;
             width: 100%;
             height: 100%;
             transform-origin: 100% 0;
-            animation: kf_loading_line $duration cubic-bezier(0.645, 0.045, 0.355, 1) 0s infinite;
+            animation: kf_loading_line $duration
+                cubic-bezier(0.645, 0.045, 0.355, 1) 0s infinite;
             border-radius: 5px;
             overflow: hidden;
 
@@ -89,7 +90,8 @@ $duration: 1.5s;
                 &--1 {
                     opacity: 1;
                     background-color: $blueColor;
-                    animation: kf_loading_line_inner--1 $duration cubic-bezier(0.645, 0.045, 0.355, 1) 0s infinite;
+                    animation: kf_loading_line_inner--1 $duration
+                        cubic-bezier(0.645, 0.045, 0.355, 1) 0s infinite;
                     border-radius: 5px;
                     overflow: hidden;
                 }
@@ -97,11 +99,12 @@ $duration: 1.5s;
                 &--2 {
                     opacity: 1;
                     background-image: linear-gradient(
-                                    to right,
-                                    $blueColor,
-                                    #014478
+                        to right,
+                        $blueColor,
+                        #014478
                     );
-                    animation: kf_loading_line_inner--2 $duration cubic-bezier(0.645, 0.045, 0.355, 1) 0s infinite;
+                    animation: kf_loading_line_inner--2 $duration
+                        cubic-bezier(0.645, 0.045, 0.355, 1) 0s infinite;
                     border-radius: 5px;
                     overflow: hidden;
                 }
