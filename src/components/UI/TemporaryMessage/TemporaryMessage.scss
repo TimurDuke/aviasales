@@ -11,6 +11,19 @@
     letter-spacing: 1px;
     padding-bottom: 5px;
     color: $blueColor;
+
+    @include for-mobile-lg {
+        top: 11%;
+        left: 26%;
+    }
+
+    @include for-mobile-md {
+        left: 16%;
+    }
+
+    @include for-mobile-sm {
+        left: 2%;
+    }
 }
 
 .fade-up {

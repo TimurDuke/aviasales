@@ -1,2 +1,23 @@
 $mainTextColor: #4a4a4a;
 $blueColor: #2196f3;
+$breakpoint-mobile-lg: 768px;
+$breakpoint-mobile-md: 480px;
+$breakpoint-mobile-sm: 390px;
+
+@mixin for-mobile-lg {
+    @media (max-width: $breakpoint-mobile-lg) {
+        @content;
+    }
+}
+
+@mixin for-mobile-md {
+    @media (max-width: $breakpoint-mobile-md) {
+        @content;
+    }
+}
+
+@mixin for-mobile-sm {
+    @media (max-width: $breakpoint-mobile-sm) {
+        @content;
+    }
+}

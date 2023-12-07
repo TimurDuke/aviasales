@@ -4,12 +4,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     &__status {
         font: 75px/75px Monoton;
         text-align: center;
         text-transform: uppercase;
-        text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+        text-shadow: 0 0 80px red, 0 0 30px FireBrick, 0 0 6px DarkRed;
         color: red;
         margin-bottom: 0;
     }
@@ -19,6 +19,7 @@
         font-weight: 700;
         color: red;
         letter-spacing: 1px;
+        text-align: center;
     }
 
     &__button {
@@ -30,7 +31,7 @@
         border: none;
         padding: 15px;
         border-radius: 10px;
-        transition: all .3s linear;
+        transition: all 0.3s linear;
 
         &:hover {
             background: #085cd5;

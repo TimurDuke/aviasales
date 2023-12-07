@@ -20,6 +20,10 @@
     margin: 0;
     width: 33%;
 
+    @include for-mobile-md {
+        width: 100%;
+    }
+
     &--selected {
         background-color: $blueColor;
         color: #fff;
@@ -37,8 +41,10 @@
         border-radius: 0 6px 6px 0;
     }
 
-    &:hover {
-        background: #f8f8f8;
+    @media (hover: hover) {
+        &:hover {
+            background: #f8f8f8;
+        }
     }
 
     &:disabled {

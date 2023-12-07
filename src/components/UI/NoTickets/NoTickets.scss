@@ -3,14 +3,15 @@
 .content {
     position: relative;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0);
     height: 160px;
-    width: 80%;
     font-size: 25px;
     line-height: 40px;
     color: $blueColor;
     font-family: 'Gill Sans', sans-serif;
+
+    @include for-mobile-sm {
+        font-size: 22px;
+    }
 
     &__container_choose {
         font-weight: 600;

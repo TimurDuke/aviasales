@@ -1,7 +1,12 @@
+@import '../../styles/variables';
+
 .logo {
     display: flex;
     flex-direction: column;
     padding-top: 50px;
+    @include for-mobile-lg {
+        padding-top: 15px;
+    }
 
     &__image {
         align-self: center;

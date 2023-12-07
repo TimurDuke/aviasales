@@ -1,7 +1,13 @@
+@import '../../../../styles/variables';
+
 .ticket-details {
     display: flex;
     justify-content: space-between;
     width: 80%;
+
+    @include for-mobile-md {
+        width: 100%;
+    }
 
     &__item-container {
         display: flex;

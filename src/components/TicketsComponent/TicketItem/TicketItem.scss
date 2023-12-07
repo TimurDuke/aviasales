@@ -10,6 +10,20 @@
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
+    width: 90%;
+
+    @include for-mobile-lg {
+        width: 80%;
+    }
+
+    @include for-mobile-md {
+        width: 90%;
+    }
+
+    @include for-mobile-sm {
+        padding: 20px 10px;
+        width: 95%;
+    }
 
     &__header {
         display: flex;
