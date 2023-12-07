@@ -1,5 +1,4 @@
 import {
-    FETCH_ALL_TICKETS_REQUEST,
     FETCH_ALL_TICKETS_SUCCESS,
     FETCH_FIRST_TICKETS_SUCCESS,
     FETCH_TICKETS_FAILURE,
@@ -28,11 +27,8 @@ const ticketsReducer = (state = initialState, action) => {
         case FETCH_TICKETS_REQUEST:
             return { ...state, isLoading: true };
 
-        case FETCH_ALL_TICKETS_REQUEST:
-            return { ...state, isAllLoading: true };
-
         case FETCH_FIRST_TICKETS_SUCCESS:
-            return { ...state, isLoading: false };
+            return { ...state, isLoading: false, isAllLoading: true };
 
         case FETCH_ALL_TICKETS_SUCCESS:
             return { ...state, isAllLoading: false };

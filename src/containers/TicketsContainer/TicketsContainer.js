@@ -12,7 +12,10 @@ import './TicketsContainer.scss';
 const TicketsContainer = () => {
     const dispatch = useDispatch();
     const searchToken = useSelector(state => state.token.searchToken);
-    const isAllLoading = useSelector(state => state.tickets.isAllLoading);
+    const isTicketsLoading = useSelector(state => state.tickets.isLoading);
+    const isAllTicketsLoading = useSelector(
+        state => state.tickets.isAllLoading
+    );
     const isTokenLoading = useSelector(state => state.token.isLoading);
 
     useEffect(() => {
@@ -24,8 +27,8 @@ const TicketsContainer = () => {
     return (
         <div className="tickets">
             <Logo />
-            {isAllLoading && <LineLoading />}
-            {!isTokenLoading && !isAllLoading && (
+            {isAllTicketsLoading && <LineLoading />}
+            {!isTokenLoading && !isTicketsLoading && !isAllTicketsLoading && (
                 <TemporaryMessage text="Все билеты успешно загружены" />
             )}
             <div className="tickets__inner">

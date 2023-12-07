@@ -2,14 +2,12 @@ import axiosApi from '../../axiosApi';
 import { TICKETS_COUNT_IN_REQUEST } from '../../constants';
 
 export const FETCH_TICKETS_REQUEST = 'FETCH_TICKETS_REQUEST';
-export const FETCH_ALL_TICKETS_REQUEST = 'FETCH_ALL_TICKETS_REQUEST';
 export const FETCH_FIRST_TICKETS_SUCCESS = 'FETCH_FIRST_TICKETS_SUCCESS';
 export const FETCH_ALL_TICKETS_SUCCESS = 'FETCH_ALL_TICKETS_SUCCESS';
 export const FETCH_TICKETS_SUCCESS = 'FETCH_TICKETS_SUCCESS';
 export const FETCH_TICKETS_FAILURE = 'FETCH_TICKETS_FAILURE';
 
 const fetchTicketsRequest = () => ({ type: FETCH_TICKETS_REQUEST });
-const fetchAllTicketsRequest = () => ({ type: FETCH_ALL_TICKETS_REQUEST });
 const fetchFirstTicketsSuccess = () => ({ type: FETCH_FIRST_TICKETS_SUCCESS });
 const fetchAllTicketsSuccess = () => ({ type: FETCH_ALL_TICKETS_SUCCESS });
 const fetchTicketsSuccess = tickets => ({
@@ -28,7 +26,6 @@ export const fetchTickets = () => async (dispatch, getState) => {
 
         if (state.tickets.tickets.length === 0) {
             dispatch(fetchTicketsRequest());
-            dispatch(fetchAllTicketsRequest());
         }
 
         if (

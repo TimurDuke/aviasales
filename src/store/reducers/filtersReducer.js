@@ -3,6 +3,7 @@ import {
     TOGGLE_ALL_FILTERS,
     TOGGLE_FILTER,
     TOGGLE_FILTER_BY_BUTTON,
+    FILTERED_ONCE,
 } from '../actions/filtersActions';
 
 const initialState = {
@@ -18,6 +19,7 @@ const initialState = {
         fastest: false,
         optimal: false,
     },
+    isFilterSelectedOnes: false,
 };
 const filtersReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -68,6 +70,9 @@ const filtersReducer = (state = initialState, action) => {
 
         case RESET_FILTER_BY_BUTTON:
             return { ...state, filtersByButton: initialState.filtersByButton };
+
+        case FILTERED_ONCE:
+            return { ...state, isFilterSelectedOnes: true };
 
         default:
             return state;

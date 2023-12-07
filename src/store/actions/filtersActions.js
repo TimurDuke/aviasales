@@ -15,3 +15,7 @@ export const toggleFilterByButton = filterKey => ({
 
 export const RESET_FILTER_BY_BUTTON = 'RESET_FILTER_BY_BUTTON';
 export const resetFilterByButton = () => ({ type: RESET_FILTER_BY_BUTTON });
+
+export const FILTERED_ONCE = 'FILTERED_ONCE';
+
+export const filteredOnce = () => ({ type: FILTERED_ONCE });

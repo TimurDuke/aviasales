@@ -57,7 +57,7 @@ $duration: 1.5s;
         left: 0;
         bottom: auto;
         right: auto;
-        background-image: linear-gradient(to left, $blueColor, #032038);
+        background-image: linear-gradient(to left, $blueColor, #014478);
         border-radius: 5px;
         overflow: hidden;
 
@@ -99,7 +99,7 @@ $duration: 1.5s;
                     background-image: linear-gradient(
                                     to right,
                                     $blueColor,
-                                    #032038
+                                    #014478
                     );
                     animation: kf_loading_line_inner--2 $duration cubic-bezier(0.645, 0.045, 0.355, 1) 0s infinite;
                     border-radius: 5px;
