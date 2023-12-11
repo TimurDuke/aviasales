@@ -4,8 +4,8 @@ $duration: 1.5s;
 
 .loading_line {
     max-width: 750px;
-    position: absolute;
-    top: 15.3%;
+    position: relative;
+    margin-bottom: -45px;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -15,13 +15,6 @@ $duration: 1.5s;
     height: 100%;
     border-radius: 5px;
     overflow: hidden;
-    @include for-mobile-lg {
-        top: 12.8%;
-    }
-
-    @include for-mobile-md {
-        top: 13.3%;
-    }
 
     &__text-block {
         display: flex;
